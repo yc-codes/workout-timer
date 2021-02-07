@@ -1,3 +1,23 @@
+@import "https://rsms.me/inter/inter.css";
+
+:root {
+  --color-primary: #5E2BFF;
+  --color-secondary: #4ECDC4;
+  font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    :root { font-family: 'Inter var', sans-serif; }
+}
+
+html{
+    font-size: 18px;
+}
+
+.plus-minus-button{
+  @apply text-2xl bg-primary text-white h-10 w-10 grid place-items-center rounded-lg;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
