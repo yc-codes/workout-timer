@@ -5,13 +5,13 @@ function IncreaseDecrease({ count, setCount }: { count: number, setCount: Functi
         <div className="grid place-items-center grid-cols-2 gap-1">
             <div
                 className="plus-minus-button"
-                onClick={() => { setCount(count--) }}>
-                <p>-</p>
+                onClick={() => { setCount(count - 1) }}>
+                -
             </div>
             <div
                 className="plus-minus-button"
-                onClick={() => { setCount(count++) }}>
-                <p>+</p>
+                onClick={() => { setCount(count + 1) }}>
+                +
             </div>
         </div>
     );
