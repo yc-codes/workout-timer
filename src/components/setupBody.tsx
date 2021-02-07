@@ -1,5 +1,5 @@
 import React from 'react';
-
+import IncreaseDecrease from './IncreaseDecrease';
 
 function SetupBody() {
     return (
@@ -10,14 +10,7 @@ function SetupBody() {
                         <p className="text-xs tracking-wide mb-1 font-bold text-gray-400 uppercase">SETS</p>
                         <p className="text-4xl font-extrabold">10</p>
                     </div>
-                    <div className="grid place-items-center grid-cols-2 gap-1">
-                        <div className="plus-minus-button">
-                            <p>-</p>
-                        </div>
-                        <div className="plus-minus-button">
-                            <p>+</p>
-                        </div>
-                    </div>
+                    <IncreaseDecrease count={10} setCount={() => { }} />
                 </div>
             </div>
 
@@ -27,14 +20,7 @@ function SetupBody() {
                         <p className="text-xs tracking-wide mb-1 font-bold text-gray-400 uppercase">Workout Time</p>
                         <p className="text-4xl font-extrabold">10</p>
                     </div>
-                    <div className="grid place-items-center grid-cols-2 gap-1">
-                        <div className="plus-minus-button">
-                            <p>-</p>
-                        </div>
-                        <div className="plus-minus-button">
-                            <p>+</p>
-                        </div>
-                    </div>
+                    <IncreaseDecrease count={10} setCount={() => { }} />
                 </div>
             </div>
 
@@ -44,14 +30,7 @@ function SetupBody() {
                         <p className="text-xs tracking-wide mb-1 font-bold text-gray-400 uppercase">Rest Time</p>
                         <p className="text-4xl font-extrabold">10</p>
                     </div>
-                    <div className="grid place-items-center grid-cols-2 gap-1">
-                        <div className="plus-minus-button">
-                            <p>-</p>
-                        </div>
-                        <div className="plus-minus-button">
-                            <p>+</p>
-                        </div>
-                    </div>
+                    <IncreaseDecrease count={10} setCount={() => { }} />
                 </div>
             </div>
 
