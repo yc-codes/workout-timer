@@ -1,14 +1,18 @@
 import React from 'react';
-import Btn from './components/btn';
-import Header from './components/header';
-import SetupBody from './components/setupBody';
+import { Route, Switch } from "wouter";
+import { ProviderWorkout } from './hooks/useWorkout';
+import Setup from './Setup';
+import Workout from './Workout';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <SetupBody />
-      <Btn text="LET’S WORK" />
+      <ProviderWorkout>
+        <Switch>
+          <Route path="/workout/:sets-:workout-:rest" component={Workout} />
+          <Route path="/" component={Setup} />
+        </Switch>
+      </ProviderWorkout>
     </div>
   );
 }

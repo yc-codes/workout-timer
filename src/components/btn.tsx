@@ -1,9 +1,14 @@
 import React from 'react';
 
-
-function Btn({ text }: { text: string }) {
+function Btn({ text, onClick }: { text: string, onClick?: Function }) {
     return (
-        <div className="mx-4 text-center bg-primary rounded-full py-2 mt-4">
+        <div
+            className="text-center bg-primary rounded-full py-2"
+            onClick={(e) => {
+                if (typeof onClick !== 'function') return;
+                onClick(e);
+            }}
+        >
             <p className="uppercase font-bold text-white">{text}</p>
         </div>
     );
