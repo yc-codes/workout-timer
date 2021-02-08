@@ -5,10 +5,10 @@ function Workout() {
     const [, params] = useRoute<{ sets: string, workout: string, rest: string }>("/workout/:sets-:workout-:rest");
     const { sets, workout, rest } = params || {};
 
-    const [counter, setCounter] = useState(-5);
+    const [counter, setCounter] = useState(120);
     const [barWidth, setBarWidth] = useState(0);
-    const [barBreakWidth, setBarBreakWidth] = useState(0);
-    const [totalSeconds] = useState(parseInt((sets || '0')?.toString() || '') * parseInt((workout || 0)?.toString() || '') * parseInt((rest || 0)?.toString() || ''));
+
+    const totalSeconds = parseInt((sets || '')?.toString() || '') * parseInt((workout || 0)?.toString() || '') * parseInt((rest || 0)?.toString() || '');
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -22,8 +22,10 @@ function Workout() {
 
     useEffect(() => {
         let barWidth = (counter * 100) / totalSeconds;
-        setBarWidth(barWidth);
-    }, [counter]);
+        if (!(barWidth > 100)) {
+            setBarWidth(barWidth);
+        }
+    }, [counter, totalSeconds]);
 
     return (
         <>
