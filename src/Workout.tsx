@@ -7,6 +7,7 @@ function Workout() {
 
     const [counter, setCounter] = useState(-5);
     const [barWidth, setBarWidth] = useState(0);
+    const [barBreakWidth, setBarBreakWidth] = useState(0);
     const [totalSeconds] = useState(parseInt((sets || '0')?.toString() || '') * parseInt((workout || 0)?.toString() || '') * parseInt((rest || 0)?.toString() || ''));
 
     useEffect(() => {
